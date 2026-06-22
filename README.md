@@ -19,12 +19,22 @@ Built and compared **Naïve Bayes** and **Decision Tree** classifiers to predict
 
 ```text
 stock-price-trend-prediction/
-├── Stock Analysis.py
-├── FSM_daily.csv
-├── RIG_daily.csv
+├── notebooks/                  ← Main analysis (Colab/Jupyter)
+│   └── stock_price_analysis.ipynb
+├── src/                        ← Clean Python code
+│   └── stock_analysis.py
+├── data/                       ← Raw and processed data
+│   ├── raw/
+│   │   ├── FSM_daily.csv
+│   │   └── RIG_daily.csv
+│   └── processed/
+├── reports/
+│   └── figures/                ← Saved plots & visualizations
+├── models/                     ← Saved trained models (optional)
 ├── requirements.txt
 ├── README.md
-└── LICENSE
+├── LICENSE
+└── .gitignore
 ```
 ## Technologies
 - Python
