@@ -40,15 +40,22 @@ stock-price-trend-prediction/
 - Python
 - pandas
 - scikit-learn (DecisionTreeClassifier, GaussianNB)
-- mtplotlib / seaborn
+- matplotlib / seaborn
 
 ## How to Run
 ```bash
+# 1. Clone the repository
+git clone https://github.com/d-toups/stock-price-trend-prediction.git
+cd stock-price-trend-prediction
+
+# 2. Install dependencies
 pip install -r requirements.txt
-python "Stock Ahalysis.py"
+
+# 3. Run the analysis
+python src/stock_analysis.py
 ```
 
 ## Key Learnings
 - Stock price prediction is extremely challenging due to market efficiency
 - Feature engineering and proper time-series validation are critical
-- Naive BAyes can sometimes outperform more complex models on small, noisy financial datasets
+- Naïve BAyes can sometimes outperform more complex models on small, noisy financial datasets
