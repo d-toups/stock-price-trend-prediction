@@ -58,4 +58,4 @@ python src/stock_analysis.py
 ## Key Learnings
 - Stock price prediction is extremely challenging due to market efficiency
 - Feature engineering and proper time-series validation are critical
-- Naïve BAyes can sometimes outperform more complex models on small, noisy financial datasets
+- Naïve Bayes can sometimes outperform more complex models on small, noisy financial datasets
