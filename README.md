@@ -48,9 +48,9 @@ This highlights an important lesson in applied ML: **more complex ≠ always bet
 ```bash
 stock-price-trend-prediction/
 ├── notebooks/
-│   └── stock_price_trend_analysis.ipynb
+│   └── stock_price_analysis.ipynb
 ├── src/
-│   └── stock_analysis.py
+│   └── stock_analysis_02.py
 ├── data/raw/
 │   ├── FSM_daily.pkl
 │   └── RIG_daily.pkl
