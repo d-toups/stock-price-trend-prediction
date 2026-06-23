@@ -99,30 +99,21 @@ stock-price-trend-prediction/
    cd stock-price-trend-prediction
 
 2. **Install dependencies**
-
+    ```bash
     pip install -r requirements.txt
 
-Run the analysisOpen the notebook in Google Colab:
-`notebooks/stock_price_trend_analysis.ipynb` (notebooks/stock_price_trend_analysis.ipynb)
-Run all cells in order
-The notebook will automatically download the stock data if the pickle files are missing
+3. **Run the analysis**
+    - Open the notebook in Google Colab:
+      `notebooks/stock_price_analysis.ipynb` (notebooks/stock_price_analysis.ipynb)
+    - Run all cells in order
+    - The notebook will automatically download the stock data if the pickle files are missing
 
-View the resultsSummary table and plots will appear in the notebook
-Full detailed classification reports are saved here:
-reports/FULL_MODEL_REPORTS.txt
+4. **View the results**
+    - Summary table and plots will appear in the notebook
+    - Full detailed classification reports are saved here:
+    `reports/FULL_MODEL_REPORTS.txt`
 
-Note: The analysis is fully reproducible (random_state=42). No manual data preparation is required.
-
----
-
-**How to use it:**
-- Delete your current "How to Reproduce" section in the README.
-- Paste the block above in its place.
-
-Would you like me to also give you the **entire final README** (all sections combined) in one clean block so you can just replace everything at once?
-
-
-```
+**Note:** The analysis is fully reproducible (random_state=42). No manual data preparation is required.
 
 ---
 
