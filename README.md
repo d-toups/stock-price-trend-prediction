@@ -1,61 +1,103 @@
-# Stock Price Trend Prediction Model – Python
+# Stock Price Trend Prediction
 
-Machine Learning project that classifies whether a stock is trending upward using technical features and two classifiers (Decision Tree and Naïve Bayes).
+**Predicting upward stock trends using skewness and relative volume**  
+**FSM vs RIG** — Machine Learning Project
 
-## Project Overview
-Built and compared **Naïve Bayes** and **Decision Tree** classifiers to predict if a stock will trend upward based on historical daily price data. Focused on feature engineering and model evaluation across different time windows and price movement thresholds.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 
-## Key Features & Methodology
-- Engineered two technical features: **skewness of returns** and **relative trading volume**
-- Tested multiple evaluation windows (14-day and 60-day) and price movement thresholds (5% and 10%)
-- Compared model performance using accuracy, precision, recall, and F1-score
+---
 
-## Results
-- **Naïve Bayes** outperformed the Decision Tree in most configurations
-- Best performance: **70% accuracy** (Naïve Bayes) on 60-day window with 5% price movement threshold
-- Demonstrated the difficulty and limitations of short-term stock price prediction
+## Objective
+
+This project explores whether **two simple engineered features** — *skewness of normalized prices* and *relative trading volume* — can predict short-term upward price trends in stocks.
+
+We analyze two stocks (**FSM** and **RIG**) over ~5 years of daily data and compare **Random Forest** vs **Gaussian Naive Bayes** across different rolling windows and trend thresholds.
+
+---
+
+## Key Results
+
+- The **5% threshold** (last close > 5% above rolling average) produced the strongest predictive signal.
+- **14-day windows** performed better when targeting stronger trends (5%).
+- **Random Forest and Naive Bayes performed very similarly** — each model won in 4 out of 8 total scenarios.
+- Best overall performance came from the **5% threshold + 14-day window**.
+- **Key Insight**: With only two features, a simple model (Naive Bayes) can be just as effective as a more complex ensemble.
+
+This highlights an important lesson in applied ML: **more complex ≠ always better**, especially on noisy financial data with limited features.
+
+---
 
 ## Repository Structure
 
 ```text
 stock-price-trend-prediction/
-├── notebooks/                  ← Main analysis (Colab/Jupyter)
-│   └── stock_price_analysis.ipynb
-├── src/                        ← Clean Python code
-│   └── stock_analysis.py
-├── data/                       ← Raw and processed data
-│   ├── raw/
-│   │   ├── FSM_daily.csv
-│   │   └── RIG_daily.csv
-│   └── processed/
+├── notebooks/
+│   └── stock_price_trend_analysis.ipynb     ← Main analysis (Colab)
+├── src/
+│   └── stock_analysis.py                    ← Clean Python scripts
+├── data/
+│   └── raw/
+│       ├── FSM_daily.pkl
+│       └── RIG_daily.pkl
 ├── reports/
-│   └── figures/                ← Saved plots & visualizations
-├── models/                     ← Saved trained models (optional)
+│   └── FULL_MODEL_REPORTS.txt               ← Full classification reports
+├── models/                                  ← (Optional) Saved models
 ├── requirements.txt
 ├── README.md
-├── LICENSE
 └── .gitignore
 ```
+
+## Features & Methodology
+
+- **Features Engineered**:
+  - Skewness of normalized closing prices in the rolling window
+  - Relative trading volume on the last day
+
+- **Experiment Design**:
+  - Rolling windows: **14-day** and **60-day**
+  - Trend thresholds: **2%** and **5%** above rolling average
+  - Models: Random Forest + Gaussian Naive Bayes
+  - Evaluation: Accuracy, Precision, Recall, F1-score
+
 ## Technologies
-- Python
-- pandas
-- scikit-learn (DecisionTreeClassifier, GaussianNB)
-- matplotlib / seaborn
 
-## How to Run
+- **Python** • **pandas** • **NumPy** • **scikit-learn**
+- **Matplotlib** / **Seaborn** • **yfinance**
+- **Jupyter / Google Colab**
+
+## How to Reproduce
 ```bash
-# 1. Clone the repository
-git clone https://github.com/d-toups/stock-price-trend-prediction.git
-cd stock-price-trend-prediction
+1. Clone the repository:
+   git clone https://github.com/d-toups/stock-price-trend-prediction.git
+   cd stock-price-trend-prediction
 
-# 2. Install dependencies
+2. Install dependencies:
 pip install -r requirements.txt
 
-# 3. Run the analysis
-python src/stock_analysis.py
+3. Open and run teh notebook:
+- notebooks/stock_price_analysis.ipynb
+- data will be automatically downloaded if the  pickle files are missing
+
+4. View full results in reports/Full_MODEL_REPORTS.txt
 ```
 
-## Key Learnings
-- Stock price prediction is extremely challenging due to market efficiency
-- Feature engineering and proper time-series validation are critical
-- Naïve Bayes can sometimes outperform more complex models on small, noisy financial datasets
+### **Colab Notebook Link**
+
+## Colab Notebook
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/13mDccMvxfU-q6eJRyUqPKNgLm5Y_GNrd?usp=sharing)
+
+## Learnings & Reflections
+
+- Stock price prediction is extremely challenging due to market noise and efficiency.
+- Feature engineering often matters more than model complexity.
+- Simple models can compete with ensembles when the feature set is small.
+
+## Future Improvements
+
+- Add more technical indicators (RSI, ATR, MACD, volatility, etc.)
+- Implement proper time-series cross-validation (walk-forward)
+- Test XGBoost / LightGBM
+- Build and backtest a full trading strategy with risk management
