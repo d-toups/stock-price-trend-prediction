@@ -29,6 +29,20 @@ This highlights an important lesson in applied ML: **more complex ≠ always bet
 
 ---
 
+## Visual Results
+
+### FSM Performance
+![FSM 5% Threshold](images/fsm_1.05.png)
+![FSM 2% Threshold](images/fsm_1.02.png)
+
+### RIG Performance
+![RIG 5% Threshold](images/rig_1.05.png)
+![RIG 2% Threshold](images/rig_1.02.png)
+
+*Blue = Random Forest | Orange = Naive Bayes*
+
+---
+
 ## Repository Structure
 
 ```text
@@ -48,12 +62,15 @@ stock-price-trend-prediction/
 ├── README.md
 └── .gitignore
 ```
+---
 
 ### **Colab Notebook Link**
 
 ## Colab Notebook
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/13mDccMvxfU-q6eJRyUqPKNgLm5Y_GNrd?usp=sharing)
+
+---
 
 ## Features & Methodology
 
@@ -66,12 +83,16 @@ stock-price-trend-prediction/
   - Trend thresholds: **2%** and **5%** above rolling average
   - Models: Random Forest + Gaussian Naive Bayes
   - Evaluation: Accuracy, Precision, Recall, F1-score
+ 
+---
 
 ## Technologies
 
 - **Python** • **pandas** • **NumPy** • **scikit-learn**
 - **Matplotlib** / **Seaborn** • **yfinance**
 - **Jupyter / Google Colab**
+
+---
 
 ## How to Reproduce
 ```bash
@@ -88,6 +109,8 @@ stock-price-trend-prediction/
 
 # View full results in reports/FULL_MODEL_REPORTS.txt
 ```
+---
+
 ## Learnings & Reflections
 
 - Stock price prediction is extremely challenging due to market noise and efficiency.
