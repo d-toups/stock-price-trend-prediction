@@ -104,7 +104,7 @@ stock-price-trend-prediction/
 
 3. **Run the analysis**
     - Open the notebook in Google Colab:
-      `notebooks/stock_price_analysis.ipynb` (notebooks/stock_price_analysis.ipynb)
+      `notebooks/stock_price_analysis.ipynb`
     - Run all cells in order
     - The notebook will automatically download the stock data if the pickle files are missing
 
