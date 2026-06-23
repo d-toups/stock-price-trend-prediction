@@ -1,0 +1,227 @@
+STOCK TREND PREDICTION - FULL MODEL REPORTS
+================================================================================
+
+STOCK: FSM | WINDOW: 14 days | THRESHOLD: 1.02 (2%)
+----------------------------------------------------------------------
+Samples: 1242
+
+RANDOM FOREST
+Accuracy: 0.6185
+              precision    recall  f1-score   support
+
+Not Trending       0.64      0.82      0.72       149
+    Trending       0.54      0.32      0.40       100
+
+    accuracy                           0.62       249
+   macro avg       0.59      0.57      0.56       249
+weighted avg       0.60      0.62      0.59       249
+
+NAIVE BAYES
+Accuracy: 0.5984
+              precision    recall  f1-score   support
+
+Not Trending       0.60      1.00      0.75       149
+    Trending       0.00      0.00      0.00       100
+
+    accuracy                           0.60       249
+   macro avg       0.30      0.50      0.37       249
+weighted avg       0.36      0.60      0.45       249
+
+================================================================================
+
+STOCK: FSM | WINDOW: 14 days | THRESHOLD: 1.05 (5%)
+----------------------------------------------------------------------
+Samples: 1242
+
+RANDOM FOREST
+Accuracy: 0.7510
+              precision    recall  f1-score   support
+
+Not Trending       0.78      0.93      0.85       185
+    Trending       0.54      0.23      0.33        64
+
+    accuracy                           0.75       249
+   macro avg       0.66      0.58      0.59       249
+weighted avg       0.72      0.75      0.71       249
+
+NAIVE BAYES
+Accuracy: 0.7430
+              precision    recall  f1-score   support
+
+Not Trending       0.74      0.99      0.85       185
+    Trending       0.50      0.02      0.03        64
+
+    accuracy                           0.74       249
+   macro avg       0.62      0.51      0.44       249
+weighted avg       0.68      0.74      0.64       249
+
+================================================================================
+
+STOCK: FSM | WINDOW: 60 days | THRESHOLD: 1.02 (2%)
+----------------------------------------------------------------------
+Samples: 1196
+
+RANDOM FOREST
+Accuracy: 0.6458
+              precision    recall  f1-score   support
+
+Not Trending       0.65      0.84      0.73       140
+    Trending       0.62      0.38      0.47       100
+
+    accuracy                           0.65       240
+   macro avg       0.64      0.61      0.60       240
+weighted avg       0.64      0.65      0.62       240
+
+NAIVE BAYES
+Accuracy: 0.5792
+              precision    recall  f1-score   support
+
+Not Trending       0.59      0.94      0.72       140
+    Trending       0.47      0.08      0.14       100
+
+    accuracy                           0.58       240
+   macro avg       0.53      0.51      0.43       240
+weighted avg       0.54      0.58      0.48       240
+
+================================================================================
+
+STOCK: FSM | WINDOW: 60 days | THRESHOLD: 1.05 (5%)
+----------------------------------------------------------------------
+Samples: 1196
+
+RANDOM FOREST
+Accuracy: 0.6417
+              precision    recall  f1-score   support
+
+Not Trending       0.67      0.89      0.77       159
+    Trending       0.42      0.16      0.23        81
+
+    accuracy                           0.64       240
+   macro avg       0.55      0.52      0.50       240
+weighted avg       0.59      0.64      0.59       240
+
+NAIVE BAYES
+Accuracy: 0.6625
+              precision    recall  f1-score   support
+
+Not Trending       0.67      0.98      0.79       159
+    Trending       0.50      0.04      0.07        81
+
+    accuracy                           0.66       240
+   macro avg       0.58      0.51      0.43       240
+weighted avg       0.61      0.66      0.55       240
+
+================================================================================
+
+STOCK: RIG | WINDOW: 14 days | THRESHOLD: 1.02 (2%)
+----------------------------------------------------------------------
+Samples: 1242
+
+RANDOM FOREST
+Accuracy: 0.5984
+              precision    recall  f1-score   support
+
+Not Trending       0.62      0.85      0.72       149
+    Trending       0.50      0.23      0.32       100
+
+    accuracy                           0.60       249
+   macro avg       0.56      0.54      0.52       249
+weighted avg       0.57      0.60      0.55       249
+
+NAIVE BAYES
+Accuracy: 0.6024
+              precision    recall  f1-score   support
+
+Not Trending       0.60      0.99      0.75       149
+    Trending       0.60      0.03      0.06       100
+
+    accuracy                           0.60       249
+   macro avg       0.60      0.51      0.40       249
+weighted avg       0.60      0.60      0.47       249
+
+================================================================================
+
+STOCK: RIG | WINDOW: 14 days | THRESHOLD: 1.05 (5%)
+----------------------------------------------------------------------
+Samples: 1242
+
+RANDOM FOREST
+Accuracy: 0.7631
+              precision    recall  f1-score   support
+
+Not Trending       0.77      0.98      0.86       184
+    Trending       0.71      0.15      0.25        65
+
+    accuracy                           0.76       249
+   macro avg       0.74      0.57      0.56       249
+weighted avg       0.75      0.76      0.70       249
+
+NAIVE BAYES
+Accuracy: 0.7711
+              precision    recall  f1-score   support
+
+Not Trending       0.76      1.00      0.87       184
+    Trending       1.00      0.12      0.22        65
+
+    accuracy                           0.77       249
+   macro avg       0.88      0.56      0.54       249
+weighted avg       0.83      0.77      0.70       249
+
+================================================================================
+
+STOCK: RIG | WINDOW: 60 days | THRESHOLD: 1.02 (2%)
+----------------------------------------------------------------------
+Samples: 1196
+
+RANDOM FOREST
+Accuracy: 0.6667
+              precision    recall  f1-score   support
+
+Not Trending       0.66      0.84      0.74       137
+    Trending       0.67      0.44      0.53       103
+
+    accuracy                           0.67       240
+   macro avg       0.67      0.64      0.64       240
+weighted avg       0.67      0.67      0.65       240
+
+NAIVE BAYES
+Accuracy: 0.6708
+              precision    recall  f1-score   support
+
+Not Trending       0.65      0.94      0.77       137
+    Trending       0.80      0.31      0.45       103
+
+    accuracy                           0.67       240
+   macro avg       0.72      0.63      0.61       240
+weighted avg       0.71      0.67      0.63       240
+
+================================================================================
+
+STOCK: RIG | WINDOW: 60 days | THRESHOLD: 1.05 (5%)
+----------------------------------------------------------------------
+Samples: 1196
+
+RANDOM FOREST
+Accuracy: 0.7125
+              precision    recall  f1-score   support
+
+Not Trending       0.72      0.92      0.81       157
+    Trending       0.68      0.31      0.43        83
+
+    accuracy                           0.71       240
+   macro avg       0.70      0.62      0.62       240
+weighted avg       0.71      0.71      0.68       240
+
+NAIVE BAYES
+Accuracy: 0.6917
+              precision    recall  f1-score   support
+
+Not Trending       0.69      0.94      0.80       157
+    Trending       0.67      0.22      0.33        83
+
+    accuracy                           0.69       240
+   macro avg       0.68      0.58      0.56       240
+weighted avg       0.69      0.69      0.64       240
+
+================================================================================
+
