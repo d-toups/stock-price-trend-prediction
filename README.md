@@ -11,57 +11,42 @@
 
 ## Objective
 
-This project explores whether **two simple engineered features** — *skewness of normalized prices* and *relative trading volume* — can predict short-term upward price trends in stocks.
+This project explores whether **two simple engineered features** — skewness of normalized closing prices and relative trading volume — can predict short-term upward price trends in stocks.
 
-We analyze two stocks (**FSM** and **RIG**) over ~5 years of daily data and compare **Random Forest** vs **Gaussian Naive Bayes** across different rolling windows and trend thresholds.
+We analyze **FSM** and **RIG** using ~5 years of daily data and compare **Random Forest** vs **Gaussian Naive Bayes** across different rolling windows (14-day and 60-day) and trend thresholds (2% and 5%).
 
 ---
 
 ## Key Results
 
-- The **5% threshold** (last close > 5% above rolling average) produced the strongest predictive signal.
-- **14-day windows** performed better when targeting stronger trends (5%).
-- **Random Forest and Naive Bayes performed very similarly** — each model won in 4 out of 8 total scenarios.
-- Best overall performance came from the **5% threshold + 14-day window**.
-- **Key Insight**: With only two features, a simple model (Naive Bayes) can be just as effective as a more complex ensemble.
+- The **5% threshold** (last close > 5% above rolling average) produced the **strongest predictive signal**.
+- **14-day windows** performed better when targeting stronger (5%) trends.
+- **Random Forest and Naive Bayes performed very similarly** — each model outperformed the other in exactly 4 out of 8 scenarios.
+- Best overall performance: **5% threshold + 14-day window**.
+- **Key Insight**: With only two features, the simpler Naive Bayes model is competitive with the more complex Random Forest.
 
 This highlights an important lesson in applied ML: **more complex ≠ always better**, especially on noisy financial data with limited features.
 
 ---
 
-## Visual Results
-
-### FSM Performance
-![FSM 5% Threshold](images/fsm_1.05.png)
-![FSM 2% Threshold](images/fsm_1.02.png)
-
-### RIG Performance
-![RIG 5% Threshold](images/rig_1.05.png)
-![RIG 2% Threshold](images/rig_1.02.png)
-
-*Blue = Random Forest | Orange = Naive Bayes*
-
----
-
 ## Repository Structure
 
-```text
+```bash
 stock-price-trend-prediction/
 ├── notebooks/
-│   └── stock_price_trend_analysis.ipynb     ← Main analysis (Colab)
+│   └── stock_price_trend_analysis.ipynb
 ├── src/
-│   └── stock_analysis.py                    ← Clean Python scripts
-├── data/
-│   └── raw/
-│       ├── FSM_daily.pkl
-│       └── RIG_daily.pkl
+│   └── stock_analysis.py
+├── data/raw/
+│   ├── FSM_daily.pkl
+│   └── RIG_daily.pkl
 ├── reports/
-│   └── FULL_MODEL_REPORTS.txt               ← Full classification reports
-├── models/                                  ← (Optional) Saved models
+│   └── FULL_MODEL_REPORTS.txt
 ├── requirements.txt
 ├── README.md
 └── .gitignore
 ```
+
 ---
 
 ### **Colab Notebook Link**
@@ -86,14 +71,6 @@ stock-price-trend-prediction/
  
 ---
 
-## Technologies
-
-- **Python** • **pandas** • **NumPy** • **scikit-learn**
-- **Matplotlib** / **Seaborn** • **yfinance**
-- **Jupyter / Google Colab**
-
----
-
 ## How to Reproduce
 ```bash
 # Clone the repository
@@ -109,6 +86,14 @@ stock-price-trend-prediction/
 
 # View full results in reports/FULL_MODEL_REPORTS.txt
 ```
+
+---
+
+## Technologies
+
+- Python, pandas, NumPy, scikit-learn
+- Matplotlib / Seaborn, yfinance
+
 ---
 
 ## Learnings & Reflections
