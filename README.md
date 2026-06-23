@@ -86,19 +86,42 @@ stock-price-trend-prediction/
 ---
 
 ## How to Reproduce
-```bash
-# Clone the repository
+
+### Prerequisites
+- Python 3.8 or higher
+- Google Colab (recommended) or Jupyter Notebook
+
+### Steps
+
+1. **Clone the repository**
+   ```bash
    git clone https://github.com/d-toups/stock-price-trend-prediction.git
    cd stock-price-trend-prediction
 
-# Install dependencies:
-  pip install -r requirements.txt
+2. **Install dependencies**
 
-# Open and run the notebook:
-  notebooks/stock_price_analysis.ipynb
-  data will be automatically downloaded if the pickle files are missing
+    pip install -r requirements.txt
 
-# View full results in reports/FULL_MODEL_REPORTS.txt
+Run the analysisOpen the notebook in Google Colab:
+`notebooks/stock_price_trend_analysis.ipynb` (notebooks/stock_price_trend_analysis.ipynb)
+Run all cells in order
+The notebook will automatically download the stock data if the pickle files are missing
+
+View the resultsSummary table and plots will appear in the notebook
+Full detailed classification reports are saved here:
+reports/FULL_MODEL_REPORTS.txt
+
+Note: The analysis is fully reproducible (random_state=42). No manual data preparation is required.
+
+---
+
+**How to use it:**
+- Delete your current "How to Reproduce" section in the README.
+- Paste the block above in its place.
+
+Would you like me to also give you the **entire final README** (all sections combined) in one clean block so you can just replace everything at once?
+
+
 ```
 
 ---
