@@ -32,12 +32,12 @@ This highlights an important lesson in applied ML: **more complex ≠ always bet
 ## Visual Results
 
 ### FSM Performance
-![FSM 5% Threshold](images/fsm_1.05.png)
-![FSM 2% Threshold](images/fsm_1.02.png)
+![FSM 5% Threshold](images/fsm_1_05.png)
+![FSM 2% Threshold](images/fsm_1_02.png)
 
 ### RIG Performance
-![RIG 5% Threshold](images/rig_1.05.png)
-![RIG 2% Threshold](images/rig_1.02.png)
+![RIG 5% Threshold](images/rig_1_05.png)
+![RIG 2% Threshold](images/rig_1_02.png)
 
 *Blue = Random Forest | Orange = Naive Bayes*
 
