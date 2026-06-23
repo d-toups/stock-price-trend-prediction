@@ -80,12 +80,14 @@ stock-price-trend-prediction/
 ### Steps
 
 1. Clone the repository
+   ```bash
    git clone https://github.com/d-toups/stock-price-trend-prediction.git
    cd stock-price-trend-prediction
-
+   ```
 2. Install dependencies
+   ```bash
    pip install -r requirements.txt
-
+   ```
 3. Run the analysis
    - Open the notebook in Google Colab: notebooks/stock_price_trend_analysis.ipynb
    - Run all cells in order
