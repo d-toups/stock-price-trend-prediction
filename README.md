@@ -83,8 +83,8 @@ stock-price-trend-prediction/
   pip install -r requirements.txt
 
 # Open and run the notebook:
-- notebooks/stock_price_analysis.ipynb
-- data will be automatically downloaded if the  pickle files are missing
+  notebooks/stock_price_analysis.ipynb
+  data will be automatically downloaded if the pickle files are missing
 
 # View full results in reports/FULL_MODEL_REPORTS.txt
 ```
