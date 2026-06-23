@@ -49,6 +49,12 @@ stock-price-trend-prediction/
 └── .gitignore
 ```
 
+### **Colab Notebook Link**
+
+## Colab Notebook
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/13mDccMvxfU-q6eJRyUqPKNgLm5Y_GNrd?usp=sharing)
+
 ## Features & Methodology
 
 - **Features Engineered**:
@@ -76,18 +82,12 @@ stock-price-trend-prediction/
 2. Install dependencies:
 pip install -r requirements.txt
 
-3. Open and run teh notebook:
+3. Open and run the notebook:
 - notebooks/stock_price_analysis.ipynb
 - data will be automatically downloaded if the  pickle files are missing
 
-4. View full results in reports/Full_MODEL_REPORTS.txt
+4. View full results in reports/FULL_MODEL_REPORTS.txt
 ```
-
-### **Colab Notebook Link**
-
-## Colab Notebook
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/13mDccMvxfU-q6eJRyUqPKNgLm5Y_GNrd?usp=sharing)
 
 ## Learnings & Reflections
 
