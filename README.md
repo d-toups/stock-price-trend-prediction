@@ -74,14 +74,12 @@ stock-price-trend-prediction/
 - **Jupyter / Google Colab**
 
 ## How to Reproduce
-
-1. Clone the repository
 ```bash
+# Clone the repository
    git clone https://github.com/d-toups/stock-price-trend-prediction.git
    cd stock-price-trend-prediction
-```
-3. Install dependencies:
-```bash
+
+# Install dependencies:
   pip install -r requirements.txt
 ```
 4. Open and run the notebook:
