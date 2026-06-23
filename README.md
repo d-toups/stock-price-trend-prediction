@@ -21,7 +21,7 @@ We analyze **FSM** and **RIG** using ~5 years of daily data and compare **Random
 
 - The **5% threshold** (last close > 5% above rolling average) produced the **strongest predictive signal**.
 - **14-day windows** performed better when targeting stronger (5%) trends.
-- **Random Forest and Naive Bayes performed very similarly** — each model outperformed the other in exactly 4 out of 8 scenarios.
+- **Random Forest and Naive Bayes performed very similarly** — each model won in exactly 4 out of 8 total scenarios.
 - Best overall performance: **5% threshold + 14-day window**.
 - **Key Insight**: With only two features, the simpler Naive Bayes model is competitive with the more complex Random Forest.
 
@@ -48,9 +48,9 @@ This highlights an important lesson in applied ML: **more complex ≠ always bet
 ```bash
 stock-price-trend-prediction/
 ├── notebooks/
-│   └── stock_price_analysis.ipynb
+│   └── stock_price_trend_analysis.ipynb
 ├── src/
-│   └── stock_analysis_02.py
+│   └── stock_analysis.py
 ├── data/raw/
 │   ├── FSM_daily.pkl
 │   └── RIG_daily.pkl
@@ -71,20 +71,6 @@ stock-price-trend-prediction/
 
 ---
 
-## Features & Methodology
-
-- **Features Engineered**:
-  - Skewness of normalized closing prices in the rolling window
-  - Relative trading volume on the last day
-
-- **Experiment Design**:
-  - Rolling windows: **14-day** and **60-day**
-  - Trend thresholds: **2%** and **5%** above rolling average
-  - Models: Random Forest + Gaussian Naive Bayes
-  - Evaluation: Accuracy, Precision, Recall, F1-score
- 
----
-
 ## How to Reproduce
 
 ### Prerequisites
@@ -93,27 +79,23 @@ stock-price-trend-prediction/
 
 ### Steps
 
-1. **Clone the repository**
-   ```bash
+1. Clone the repository
    git clone https://github.com/d-toups/stock-price-trend-prediction.git
    cd stock-price-trend-prediction
 
-2. **Install dependencies**
-    ```bash
-    pip install -r requirements.txt
+2. Install dependencies
+   pip install -r requirements.txt
 
-3. **Run the analysis**
-    - Open the notebook in Google Colab:
-      `notebooks/stock_price_analysis.ipynb`
-    - Run all cells in order
-    - The notebook will automatically download the stock data if the pickle files are missing
+3. Run the analysis
+   - Open the notebook in Google Colab: notebooks/stock_price_trend_analysis.ipynb
+   - Run all cells in order
+   - The notebook will automatically download the stock data if the pickle files are missing
 
-4. **View the results**
-    - Summary table and plots will appear in the notebook
-    - Full detailed classification reports are saved here:
-    `reports/FULL_MODEL_REPORTS.txt`
+4. View the results
+   - Summary table and plots will appear in the notebook
+   - Full detailed classification reports are saved here: reports/FULL_MODEL_REPORTS.txt
 
-**Note:** The analysis is fully reproducible (random_state=42). No manual data preparation is required.
+Note: The analysis is fully reproducible (random_state=42). No manual data preparation is required.
 
 ---
 
