@@ -81,13 +81,13 @@ stock-price-trend-prediction/
 
 # Install dependencies:
   pip install -r requirements.txt
-```
-4. Open and run the notebook:
+
+# Open and run the notebook:
 - notebooks/stock_price_analysis.ipynb
 - data will be automatically downloaded if the  pickle files are missing
 
-4. View full results in reports/FULL_MODEL_REPORTS.txt
-
+# View full results in reports/FULL_MODEL_REPORTS.txt
+```
 ## Learnings & Reflections
 
 - Stock price prediction is extremely challenging due to market noise and efficiency.
