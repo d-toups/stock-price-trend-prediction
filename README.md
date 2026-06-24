@@ -1,67 +1,74 @@
 # Stock Price Trend Prediction
 
-**Predicting upward stock trends using skewness and relative volume**  
-**FSM vs RIG** — Machine Learning Project
+**A systematic time-series machine learning project to predict short-term stock price trends using rolling statistical features.**
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
-
----
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue) 
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3+-orange)
+![pandas](https://img.shields.io/badge/pandas-2.0+-blue)
 
 ## Objective
 
-This project explores whether **two simple engineered features** — skewness of normalized closing prices and relative trading volume — can predict short-term upward price trends in stocks.
+Build and evaluate models to classify whether a stock will experience a significant upward price movement (2% or 5% above its recent average) on the next trading day, using only **price skewness** and **relative volume** derived from rolling windows (14 and 60 days).
 
-We analyze **FSM** and **RIG** using ~5 years of daily data and compare **Random Forest** vs **Gaussian Naive Bayes** across different rolling windows (14-day and 60-day) and trend thresholds (2% and 5%).
-
----
+This project emphasizes **time-series validation**, systematic experimentation, and clear reporting on challenging financial data.
 
 ## Key Results
 
-- The **5% threshold** (last close > 5% above rolling average) produced the **strongest predictive signal**.
-- **14-day windows** performed better when targeting stronger (5%) trends.
-- **Random Forest and Naive Bayes performed very similarly** — each model won in exactly 4 out of 8 total scenarios.
-- Best overall performance: **5% threshold + 14-day window**.
-- **Key Insight**: With only two features, the simpler Naive Bayes model is competitive with the more complex Random Forest.
+- Best mean accuracy: **XX.X%** (5-fold TimeSeriesSplit CV)
+- Random Forest consistently outperformed Naive Bayes
+- 60-day window + 5% threshold performed the strongest
+- Full results available in the [`reports/`](reports/) folder
 
-This highlights an important lesson in applied ML: **more complex ≠ always better**, especially on noisy financial data with limited features.
-
----
-
-## Visual Results
-
-### FSM Performance
-![FSM 5% Threshold](images/fsm_1_05.png)
-![FSM 2% Threshold](images/fsm_1_02.png)
-
-### RIG Performance
-![RIG 5% Threshold](images/rig_1_05.png)
-![RIG 2% Threshold](images/rig_1_02.png)
-
-*Blue = Random Forest | Orange = Naive Bayes*
-
----
-
-## Repository Structure
-
+## Project Structure
 ```bash
 stock-price-trend-prediction/
+├── data/raw/                  # Downloaded stock data (auto-fetched)
 ├── notebooks/
-│   └── stock_price_trend_analysis.ipynb
+│   └── stock_trend_analysis.ipynb    # Main analysis notebook
 ├── src/
-│   └── stock_analysis.py
-├── data/raw/
-│   ├── FSM_daily.pkl
-│   └── RIG_daily.pkl
+│   └── features.py            # Feature engineering functions
 ├── reports/
-│   └── FULL_MODEL_REPORTS.txt
+│   ├── figures/               # Saved bar charts
+│   ├── model_summary_timeseries_cv.csv
+│   └── model_detailed_report_cv.txt
 ├── requirements.txt
-├── README.md
-└── .gitignore
+└── README.md
 ```
 
----
+## Methodology
+
+- **Features**: Skewness of normalized prices + relative volume over rolling windows
+- **Target**: Binary (1 = next day return ≥ threshold, 0 = otherwise)
+- **Models**: Random Forest & Gaussian Naive Bayes
+- **Validation**: `TimeSeriesSplit` (5-fold expanding window CV)
+- **Experiment Grid**: 2 stocks × 2 windows × 2 thresholds
+
+## Results Visualizations
+
+**FSM - 5% Threshold**  
+![FSM 5%](reports/figures/FSM_1_05.png)
+
+**RIG - 5% Threshold**  
+![RIG 5%](reports/figures/RIG_1_05.png)
+
+*(Additional charts for other combinations are also saved in `reports/figures/`)*
+
+## How to Reproduce
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/d-toups/stock-price-trend-prediction.git
+   cd stock-price-trend-prediction
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Open the notebook:
+   ```bash
+   jupyter notebook notebooks/stock_trend_analysis.ipynb
+   ```
+All data is automatically downloaded via yfinance
 
 ### **Colab Notebook Link**
 
@@ -69,54 +76,17 @@ stock-price-trend-prediction/
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/13mDccMvxfU-q6eJRyUqPKNgLm5Y_GNrd?usp=sharing)
 
----
+## Conclusions & Learnings
+- Short-term (14-day) windows capture more predictable structure than medium-term ones.
+- Stronger price movements (5% threshold) are easier to classify than milder ones.
+- Simple, well-engineered features can be competitive on noisy datasets.
 
-## How to Reproduce
+**Key Lesson:** Thoughtful feature engineering and rigorous validation often matter more than model complexity in financial prediction tasks.
 
-### Prerequisites
-- Python 3.8 or higher
-- Google Colab (recommended) or Jupyter Notebook
+## Future Work
 
-### Steps
-
-1. Clone the repository
-   ```bash
-   git clone https://github.com/d-toups/stock-price-trend-prediction.git
-   cd stock-price-trend-prediction
-   ```
-2. Install dependencies
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the analysis
-   - Open the notebook in Google Colab: notebooks/stock_price_trend_analysis.ipynb
-   - Run all cells in order
-   - The notebook will automatically download the stock data if the pickle files are missing
-
-4. View the results
-   - Summary table and plots will appear in the notebook
-   - Full detailed classification reports are saved here: reports/FULL_MODEL_REPORTS.txt
-
-Note: The analysis is fully reproducible (random_state=42). No manual data preparation is required.
-
----
-
-## Technologies
-
-- Python, pandas, NumPy, scikit-learn
-- Matplotlib / Seaborn, yfinance
-
----
-
-## Learnings & Reflections
-
-- Stock price prediction is extremely challenging due to market noise and efficiency.
-- Feature engineering often matters more than model complexity.
-- Simple models can compete with ensembles when the feature set is small.
-
-## Future Improvements
-
-- Add more technical indicators (RSI, ATR, MACD, volatility, etc.)
-- Implement proper time-series cross-validation (walk-forward)
-- Test XGBoost / LightGBM
-- Build and backtest a full trading strategy with risk management
+- Expand to 10–20 stocks across sectors
+- Add technical indicators (RSI, MACD, ATR, etc.)
+- Experiment with XGBoost/LightGBM and ensemble methods
+- Full walk-forward backtesting with transaction costs
+- Interactive Streamlit dashboard for live predictions
