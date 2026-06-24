@@ -13,12 +13,12 @@ Build and evaluate models to classify whether a stock will experience a signific
 
 This project emphasizes **time-series validation**, systematic experimentation, and clear reporting on challenging financial data.
 
-## Key Results
+## Key Results (TimeSeriesSplit 5-fold CV)
 
-- Best mean accuracy: **XX.X%** (5-fold TimeSeriesSplit CV)
-- Random Forest and Naive Bayes perform evenly, with each outperforming the other in 4 out of 8 assessments
-- 60-day window + 5% threshold performed the strongest
-- Full results available in the [`reports/`](reports/) folder
+- **Best overall performance**: **74.40%** mean accuracy — achieved by **Naive Bayes** using a **14-day rolling window** and **5% return threshold**
+- Short-term (14-day) windows consistently outperformed 60-day windows
+- Stronger trends (5% threshold) produced significantly better results than 2% threshold
+- Full detailed comparison available in [`reports/model_summary_timeseries_cv.csv`](reports/model_summary_timeseries_cv.csv)
 
 ### **Colab Notebook Link**
 
@@ -77,12 +77,14 @@ stock-price-trend-prediction/
    ```
 All data is automatically downloaded via yfinance
 
-## Conclusions & Learnings
-- Short-term (14-day) windows capture more predictable structure than medium-term ones.
-- Stronger price movements (5% threshold) are easier to classify than milder ones.
-- Simple, well-engineered features can be competitive on noisy datasets.
+## Conclusions & Key Learnings
 
-**Key Lesson:** Thoughtful feature engineering and rigorous validation often matter more than model complexity in financial prediction tasks.
+- Short-term (14-day) windows captured more predictable structure than medium-term (60-day) windows.
+- Stronger price movements (5% threshold) were noticeably easier to classify than milder ones.
+- **Random Forest and Naive Bayes showed very balanced performance**: each model outperformed the other in exactly 4 out of the 8 configurations. This highlights how effective a simple probabilistic model can be when features are well-engineered.
+- Simple, domain-informed features (price skewness + relative volume) proved competitive on noisy financial data.
+
+**Key Lesson**: On noisy, near-random-walk data like stock prices, thoughtful feature engineering and proper validation often matter more than choosing a more complex model.
 
 ## Future Work
 
