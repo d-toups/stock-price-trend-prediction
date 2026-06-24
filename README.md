@@ -15,7 +15,7 @@ This project emphasizes **time-series validation**, systematic experimentation, 
 ## Key Results
 
 - Best mean accuracy: **XX.X%** (5-fold TimeSeriesSplit CV)
-- Random Forest consistently outperformed Naive Bayes
+- Random Forest and Naive Bayes perform evenly, with each outperforming in 4 out of 8 assessments
 - 60-day window + 5% threshold performed the strongest
 - Full results available in the [`reports/`](reports/) folder
 
