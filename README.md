@@ -29,17 +29,17 @@ This project emphasizes **time-series validation**, systematic experimentation, 
 ## Project Structure
 ```bash
 stock-price-trend-prediction/
-├── data/raw/                  # Downloaded stock data (auto-fetched)
+├── data/raw/                    # Raw data (auto-downloaded via yfinance)
+├── images/                      # Generated result visualizations
+├── models/                      # Saved models (optional)
 ├── notebooks/
-│   └── stock_trend_analysis.ipynb    # Main analysis notebook
+│   └── stock_price_trend_analysis.ipynb    # Main analysis notebook
+├── reports/                     # CSV summaries and text reports
 ├── src/
-│   └── features.py            # Feature engineering functions
-├── reports/
-│   ├── figures/               # Saved bar charts
-│   ├── model_summary_timeseries_cv.csv
-│   └── model_detailed_report_cv.txt
+│   └── stock_analysis.py        # Feature engineering & modeling code
 ├── requirements.txt
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
 ## Methodology
