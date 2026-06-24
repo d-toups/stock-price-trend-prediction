@@ -2,6 +2,7 @@
 
 **A systematic time-series machine learning project to predict short-term stock price trends using rolling statistical features.**
 
+## Technologies
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue) 
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3+-orange)
 ![pandas](https://img.shields.io/badge/pandas-2.0+-blue)
@@ -18,6 +19,12 @@ This project emphasizes **time-series validation**, systematic experimentation, 
 - Random Forest and Naive Bayes perform evenly, with each outperforming the other in 4 out of 8 assessments
 - 60-day window + 5% threshold performed the strongest
 - Full results available in the [`reports/`](reports/) folder
+
+### **Colab Notebook Link**
+
+## Colab Notebook
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/13mDccMvxfU-q6eJRyUqPKNgLm5Y_GNrd?usp=sharing)
 
 ## Project Structure
 ```bash
@@ -70,12 +77,6 @@ stock-price-trend-prediction/
    ```
 All data is automatically downloaded via yfinance
 
-### **Colab Notebook Link**
-
-## Colab Notebook
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/13mDccMvxfU-q6eJRyUqPKNgLm5Y_GNrd?usp=sharing)
-
 ## Conclusions & Learnings
 - Short-term (14-day) windows capture more predictable structure than medium-term ones.
 - Stronger price movements (5% threshold) are easier to classify than milder ones.
@@ -88,5 +89,4 @@ All data is automatically downloaded via yfinance
 - Expand to 10–20 stocks across sectors
 - Add technical indicators (RSI, MACD, ATR, etc.)
 - Experiment with XGBoost/LightGBM and ensemble methods
-- Full walk-forward backtesting with transaction costs
 - Interactive Streamlit dashboard for live predictions
