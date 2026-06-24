@@ -46,10 +46,10 @@ stock-price-trend-prediction/
 ## Results Visualizations
 
 **FSM - 5% Threshold**  
-![FSM 5%](reports/figures/FSM_1_05.png)
+![FSM 5%](reports/figures/fsm_1_05.png)
 
 **RIG - 5% Threshold**  
-![RIG 5%](reports/figures/RIG_1_05.png)
+![RIG 5%](reports/figures/rig_1_05.png)
 
 *(Additional charts for other combinations are also saved in `reports/figures/`)*
 
